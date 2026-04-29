@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Script Me Wellness</title>
+  <meta name="description" content="Functional medicine services including hormone optimization, thyroid health, gut health, weight management, and chronic disease support." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="theme-color" content="#FAF7F2" />
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand" aria-label="Script Me Wellness home">
+        <span class="brand__mark">Script Me Wellness</span>
+        <span class="brand__sub">Functional Medicine</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="is-active">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-drawer" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== PAGE HEAD ==================== -->
+    <section class="page-head">
+      <div class="container-narrow">
+        <p class="eyebrow">Conditions &amp; Areas We Specialize In</p>
+        <h1 class="display-1">Eight focus areas. <br/>One personalized plan.</h1>
+        <p>Every service begins with a thorough intake and comprehensive testing — because real solutions require real answers first.</p>
+      </div>
+    </section>
+
+    <!-- ==================== TABBED SERVICES ==================== -->
+    <section>
+      <div class="container">
+        <div class="tabs" data-tabs>
+          <div class="tabs__nav" role="tablist">
+            <button class="tabs__btn is-active" data-tab="hormone" role="tab" aria-selected="true">Hormone</button>
+            <button class="tabs__btn" data-tab="thyroid" role="tab" aria-selected="false">Thyroid</button>
+            <button class="tabs__btn" data-tab="gut" role="tab" aria-selected="false">Gut</button>
+            <button class="tabs__btn" data-tab="weight" role="tab" aria-selected="false">Weight</button>
+            <button class="tabs__btn" data-tab="chronic" role="tab" aria-selected="false">Chronic Disease</button>
+            <button class="tabs__btn" data-tab="sleep" role="tab" aria-selected="false">Sleep</button>
+            <button class="tabs__btn" data-tab="fitness" role="tab" aria-selected="false">Fitness</button>
+            <button class="tabs__btn" data-tab="supplements" role="tab" aria-selected="false">Supplements</button>
+          </div>
+
+          <!-- Hormone -->
+          <div class="tab-panel is-active" data-panel="hormone" role="tabpanel">
+            <div class="tab-panel__media">[Photo:<br/>warm portrait of woman]</div>
+            <div>
+              <h3 class="tab-panel__title">Hormone Optimization</h3>
+              <p>Hormonal imbalance shows up in dozens of ways — fatigue, irregular cycles, mood shifts, weight gain, sleep disruption, low libido. Standard labs miss most of it.</p>
+              <p>We run comprehensive testing — DUTCH panels, full sex hormone profiles, cortisol rhythms — and design protocols that address the upstream drivers. The goal is not just to treat symptoms but to restore the underlying signaling so your body works the way it should.</p>
+              <ul class="tab-panel__list">
+                <li>Perimenopause and menopause</li>
+                <li>PCOS and cycle irregularities</li>
+                <li>Estrogen dominance</li>
+                <li>Low testosterone (women & men)</li>
+                <li>Adrenal & cortisol balance</li>
+                <li>Bioidentical hormone therapy</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Thyroid -->
+          <div class="tab-panel" data-panel="thyroid" role="tabpanel" hidden>
+            <div class="tab-panel__media">[Photo:<br/>thyroid-related imagery,<br/>provider with patient]</div>
+            <div>
+              <h3 class="tab-panel__title">Thyroid Health</h3>
+              <p>The standard thyroid panel is one number — TSH — and it misses most of what matters. We run the full picture: free T3, free T4, reverse T3, and antibodies, then trace the upstream drivers that conventional medicine often overlooks.</p>
+              <p>Many patients arrive after years of being told their thyroid is "fine" while their lives are anything but. We listen, test thoroughly, and treat the system rather than the lab value.</p>
+              <ul class="tab-panel__list">
+                <li>Hypothyroidism & Hashimoto's</li>
+                <li>Hyperthyroidism & Graves'</li>
+                <li>Thyroid antibodies</li>
+                <li>Subclinical thyroid dysfunction</li>
+                <li>Nutrient & cofactor support</li>
+                <li>Stress, gut, and inflammation triggers</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Gut -->
+          <div class="tab-panel" data-panel="gut" role="tabpanel" hidden>
+            <div class="tab-panel__media">[Photo:<br/>fresh whole foods,<br/>clean kitchen light]</div>
+            <div>
+              <h3 class="tab-panel__title">Gut Health</h3>
+              <p>The gut is upstream of nearly every chronic symptom — fatigue, skin issues, mood, autoimmune flares, food sensitivities. When the microbiome is out of balance, the rest of the body feels it.</p>
+              <p>We use targeted testing (GI Map and others) to identify pathogens, dysbiosis, inflammation, and digestive function. From there we rebuild from the foundation up — clearing what shouldn't be there, restoring what should, and addressing the lifestyle pieces that keep it working.</p>
+              <ul class="tab-panel__list">
+                <li>SIBO & dysbiosis</li>
+                <li>Bloating & IBS</li>
+                <li>Leaky gut & inflammation</li>
+                <li>Food sensitivities</li>
+                <li>Microbiome restoration</li>
+                <li>Reflux & digestive function</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Weight -->
+          <div class="tab-panel" data-panel="weight" role="tabpanel" hidden>
+            <div class="tab-panel__media">[Photo:<br/>movement, outdoors,<br/>sustainable lifestyle]</div>
+            <div>
+              <h3 class="tab-panel__title">Weight & Metabolic Health</h3>
+              <p>Sustainable weight change starts upstream. When insulin, hormones, sleep, stress, and gut health are out of balance, no diet works for long. We address the metabolic foundation so the changes you make actually hold.</p>
+              <p>This is not a weight-loss program. It is whole-body care that includes weight as one piece of a bigger picture — one that keeps working long after you've reached your goals.</p>
+              <ul class="tab-panel__list">
+                <li>Insulin resistance</li>
+                <li>Metabolic syndrome</li>
+                <li>Plateau and resistance</li>
+                <li>Body composition</li>
+                <li>Realistic nutrition frameworks</li>
+                <li>Long-term habit change</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Chronic -->
+          <div class="tab-panel" data-panel="chronic" role="tabpanel" hidden>
+            <div class="tab-panel__media">[Photo:<br/>quiet, grounded portrait]</div>
+            <div>
+              <h3 class="tab-panel__title">Chronic Disease Support</h3>
+              <p>Functional medicine works alongside conventional care for complex conditions where root-cause work makes a real difference. We don't replace your specialists — we complement them, addressing the upstream pieces that often get missed.</p>
+              <p>Many of our patients are managing autoimmune disease, chronic fatigue, fibromyalgia, or long-term inflammation. The work is patient and individualized, and we go at the pace your body can sustain.</p>
+              <ul class="tab-panel__list">
+                <li>Autoimmune conditions</li>
+                <li>Chronic fatigue syndrome</li>
+                <li>Fibromyalgia</li>
+                <li>Long COVID</li>
+                <li>Mold & environmental illness</li>
+                <li>Inflammation-driven conditions</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sleep -->
+          <div class="tab-panel" data-panel="sleep" role="tabpanel" hidden>
+            <div class="tab-panel__media">[Photo:<br/>soft light, restful,<br/>natural setting]</div>
+            <div>
+              <h3 class="tab-panel__title">Sleep Optimization</h3>
+              <p>Sleep is not a luxury. It is the window during which the body repairs itself — and when it doesn't happen, almost nothing else can. We treat sleep as medicine.</p>
+              <p>For most patients, poor sleep is a downstream symptom. We trace it back to its sources — cortisol, blood sugar, hormones, environment, anxiety — and rebuild restoration from there.</p>
+              <ul class="tab-panel__list">
+                <li>Insomnia & poor sleep quality</li>
+                <li>Cortisol & circadian rhythm</li>
+                <li>Hormone-related sleep issues</li>
+                <li>Sleep environment & hygiene</li>
+                <li>Targeted supplementation</li>
+                <li>Stress and anxiety drivers</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Fitness -->
+          <div class="tab-panel" data-panel="fitness" role="tabpanel" hidden>
+            <div class="tab-panel__media">[Photo:<br/>strength training,<br/>natural light]</div>
+            <div>
+              <h3 class="tab-panel__title">Fitness Programming</h3>
+              <p>The right movement is medicine. The wrong movement — too much, too intense, in the wrong season of life — depletes the very systems we're trying to heal. We help you find the kind of training that supports rather than drains.</p>
+              <p>Programming is built around your hormones, your stress, your goals, and your real-life schedule. The goal is strength and resilience that lasts decades, not a quick result that costs you energy.</p>
+              <ul class="tab-panel__list">
+                <li>Strength training fundamentals</li>
+                <li>Hormone-aware programming</li>
+                <li>Mobility & longevity</li>
+                <li>Recovery & nervous system</li>
+                <li>Personalized progression</li>
+                <li>Integrating movement into life</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Supplements -->
+          <div class="tab-panel" data-panel="supplements" role="tabpanel" hidden>
+            <div class="tab-panel__media">[Photo:<br/>clean shelf,<br/>practitioner-grade products]</div>
+            <div>
+              <h3 class="tab-panel__title">Supplements & Peptides</h3>
+              <p>We use practitioner-grade supplements and, when appropriate, peptide therapies — always targeted, never prescriptive. Every recommendation is backed by your labs and reviewed regularly.</p>
+              <p>The goal is to use as little as possible, for as long as needed, with a clear plan to step off when the underlying work is done. Supplementation supports the foundation. It does not replace it.</p>
+              <ul class="tab-panel__list">
+                <li>Targeted supplementation</li>
+                <li>Practitioner-grade products</li>
+                <li>Peptide therapies</li>
+                <li>Nutrient repletion</li>
+                <li>Lab-guided protocols</li>
+                <li>Regular review & adjustment</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="cta-band">
+      <div class="container-narrow reveal">
+        <h2 class="display-2">Not sure where to start?</h2>
+        <p>The discovery call is the right place. Tell us what you're working with, and we'll help you figure out what makes sense.</p>
+        <a href="contact.html#book-emily" class="btn btn--primary">Schedule your call</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p class="site-footer__brand">Script Me Wellness</p>
+          <p class="site-footer__tagline">Functional medicine for women and families. Personalized care that asks the right questions and builds from the root.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:admin@scriptmewellness.com">admin@scriptmewellness.com</a></li>
+            <li><a href="https://www.instagram.com/scriptme_wellness" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do" target="_blank" rel="noopener">Patient Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__legal">
+        <span>© 2026 Script Me Wellness, LLC. All rights reserved.</span>
+        <span>Site by Michelle Cook</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== STICKY FOOTER BAR ==================== -->
+  <div class="footer-bar">
+    <div class="footer-bar__inner">
+      <span class="footer-bar__msg">New patients welcome — discovery calls are complimentary.</span>
+      <div class="footer-bar__actions">
+        <a href="contact.html#book-emily" class="btn btn--ghost btn--small">Discovery Call</a>
+        <a href="contact.html" class="btn btn--primary btn--small">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

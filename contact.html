@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Book — Script Me Wellness</title>
+  <meta name="description" content="Schedule a discovery call, book an appointment, or send us a message. Functional medicine care led by Emily Osisek, FNP-BC." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="theme-color" content="#FAF7F2" />
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand" aria-label="Script Me Wellness home">
+        <span class="brand__mark">Script Me Wellness</span>
+        <span class="brand__sub">Functional Medicine</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="is-active">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-drawer" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== PAGE HEAD ==================== -->
+    <section class="page-head">
+      <div class="container-narrow">
+        <p class="eyebrow">Contact &amp; Book</p>
+        <h1 class="display-1">Schedule, message, or sign in.</h1>
+        <p>New patients book with Emily. Existing patients can book health coaching with Olivia or Janice, or sign in to the patient portal.</p>
+      </div>
+    </section>
+
+    <!-- ==================== BOOKING OPTIONS ==================== -->
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Book an Appointment</p>
+          <h2 class="display-2">Three providers, one easy place to start</h2>
+          <p>New to Script Me? Start with Emily for a discovery call or initial consultation. Existing patients can book physical therapy with Olivia or IV therapy with Janice through Thrive &amp; Co.</p>
+        </div>
+
+        <div class="info-grid info-grid--3up reveal">
+
+          <div class="info-card">
+            <p class="eyebrow" style="margin-bottom: 0.5rem;">Functional Medicine</p>
+            <h4>Book with Emily</h4>
+            <p>Discovery calls and new-patient consultations with Emily Osisek, FNP-BC. Schedule directly using the calendar below.</p>
+            <div class="info-card__spacer"></div>
+            <a href="#book-emily" class="btn btn--primary" style="margin-top: 1rem; align-self: flex-start;">View calendar</a>
+          </div>
+
+          <div class="info-card">
+            <p class="eyebrow" style="margin-bottom: 0.5rem;">Physical Therapy</p>
+            <h4>Book with Olivia</h4>
+            <p>One-on-one physical therapy sessions with Olivia DeLaurentiis, PT, DPT. Specializing in orthopedics, pediatrics, and personalized recovery.</p>
+            <div class="info-card__spacer"></div>
+            <a href="https://calendly.com/odelaurentiis" class="btn btn--outline" target="_blank" rel="noopener" style="margin-top: 1rem; align-self: flex-start;">Schedule on Calendly</a>
+          </div>
+
+          <div class="info-card">
+            <p class="eyebrow" style="margin-bottom: 0.5rem;">IV Therapy &amp; Phlebotomy</p>
+            <h4>Book with Janice</h4>
+            <p>Mobile IV therapy and phlebotomy through Thrive &amp; Co. Script Me patients receive partner pricing on all services.</p>
+            <div class="info-card__spacer"></div>
+            <a href="https://calendly.com/wellnessbytc/30min" class="btn btn--outline" target="_blank" rel="noopener" style="margin-top: 1rem; align-self: flex-start;">Schedule on Calendly</a>
+          </div>
+
+        </div>
+
+        <!-- Existing patients banner -->
+        <div class="reveal" style="margin-top: 3rem; padding: 1.5rem 2rem; background: var(--color-bg-alt); border-radius: 4px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+          <div>
+            <p class="eyebrow" style="margin-bottom: 0.25rem;">Existing Patients</p>
+            <p style="font-size: var(--fs-base); margin: 0; color: var(--color-text);">Already a Script Me patient? Log in to your portal for messaging, lab results, and records.</p>
+          </div>
+          <a href="https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do" class="btn btn--outline btn--small" target="_blank" rel="noopener">Open patient portal</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== BOOK WITH EMILY (CHARM EMBED) ==================== -->
+    <section id="book-emily" class="anchor-offset" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-head section-head--left reveal">
+          <p class="eyebrow">Schedule</p>
+          <h2 class="display-2">Book with Emily</h2>
+          <p style="margin: 0;">Choose a time that works for you. You'll receive a confirmation email after booking with everything you need for your visit.</p>
+        </div>
+
+        <div class="embed-frame reveal">
+          <iframe
+            width="100%"
+            height="1000"
+            src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&digest=d99ab3a0ad45a5b058241140089795fce4ab04fff3b5501de2c5455b597fd6e3c791341ca9a05ba4a4632bb5974293b1a0ae868b6eb0918a"
+            style="overflow:hidden;"
+            frameborder="0"
+            title="Book an appointment with Emily Osisek, FNP-BC"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <p style="text-align: center; margin-top: 1.5rem; font-size: var(--fs-sm); color: var(--color-text-mute);">
+          Having trouble with the calendar? <a href="mailto:admin@scriptmewellness.com" style="color: var(--color-accent-deep); text-decoration: underline;">Email us</a> and we'll get you scheduled.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT FORM + INFO ==================== -->
+    <section>
+      <div class="container">
+
+        <div class="split">
+          <div class="split__body reveal">
+            <p class="eyebrow">Have a question?</p>
+            <h2 class="display-2">Send us a message</h2>
+            <p>For anything that isn't a booking — questions about our approach, working with us, or what to expect — we'd love to hear from you. We respond within one to two business days.</p>
+
+            <form class="form" data-contact-form style="margin-top: 2rem;">
+              <div class="form__row">
+                <div>
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+              </div>
+
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+
+              <div>
+                <label for="message">How can we help?</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary" style="justify-self: start;">Send message</button>
+
+              <p style="font-size: var(--fs-xs); color: var(--color-text-mute); margin-top: 0.5rem;">
+                Please don't include sensitive medical information in this form. For anything clinical, the patient portal is the secure place.
+              </p>
+            </form>
+          </div>
+
+          <div class="split__body reveal" style="transition-delay: 120ms;">
+            <p class="eyebrow">Practice Information</p>
+            <h2 class="display-2">Where to find us</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+              <div>
+                <h4 style="font-family: var(--font-body); font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-mute); margin-bottom: 0.5rem;">Email</h4>
+                <p><a href="mailto:admin@scriptmewellness.com" style="color: var(--color-accent-deep); font-size: var(--fs-md);">admin@scriptmewellness.com</a></p>
+              </div>
+
+              <div>
+                <h4 style="font-family: var(--font-body); font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-mute); margin-bottom: 0.5rem;">Patient Portal</h4>
+                <p><a href="https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do" target="_blank" rel="noopener" style="color: var(--color-accent-deep); font-size: var(--fs-md);">Charm Patient Portal</a></p>
+                <p style="font-size: var(--fs-sm);">Existing patients log in here for messaging, lab results, and scheduling.</p>
+              </div>
+
+              <div>
+                <h4 style="font-family: var(--font-body); font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-mute); margin-bottom: 0.5rem;">Social</h4>
+                <p><a href="https://www.instagram.com/scriptme_wellness" target="_blank" rel="noopener" style="color: var(--color-accent-deep); font-size: var(--fs-md);">@scriptme_wellness</a></p>
+              </div>
+
+              <div>
+                <h4 style="font-family: var(--font-body); font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-mute); margin-bottom: 0.5rem;">Hours</h4>
+                <p style="font-size: var(--fs-sm);">[Placeholder — please supply]<br/>Monday–Thursday, 9am–5pm<br/>Friday, by appointment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p class="site-footer__brand">Script Me Wellness</p>
+          <p class="site-footer__tagline">Functional medicine for women and families. Personalized care that asks the right questions and builds from the root.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:admin@scriptmewellness.com">admin@scriptmewellness.com</a></li>
+            <li><a href="https://www.instagram.com/scriptme_wellness" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do" target="_blank" rel="noopener">Patient Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__legal">
+        <span>© 2026 Script Me Wellness, LLC. All rights reserved.</span>
+        <span>Site by Michelle Cook</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== STICKY FOOTER BAR ==================== -->
+  <div class="footer-bar">
+    <div class="footer-bar__inner">
+      <span class="footer-bar__msg">New patients welcome — discovery calls are complimentary.</span>
+      <div class="footer-bar__actions">
+        <a href="#book-emily" class="btn btn--ghost btn--small">Discovery Call</a>
+        <a href="#book-emily" class="btn btn--primary btn--small">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
