@@ -1,13 +1,12 @@
 /* =========================================================
    SCRIPT ME WELLNESS — Main Stylesheet
-   Built by Michelle Cook, 2026
-   ========================================================= */
+  ============================ */
 
 /* ====== DESIGN TOKENS ====== */
 :root {
-  /* Color palette — calm, clinical, warm */
-  --color-bg: #FAF7F2;
-  --color-bg-alt: #F2EDE4;
+  /* Color palette — clean white with warm sand accents */
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F5F0E6;
   --color-surface: #FFFFFF;
   --color-text: #2A2D2E;
   --color-text-soft: #5C5F60;
@@ -136,7 +135,7 @@ section { padding: var(--space-9) 0; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 247, 242, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-line-soft);
