@@ -1,19 +1,17 @@
-/* =========================================================
-   SCRIPT ME WELLNESS — Main Stylesheet
-  ============================ */
-
 /* ====== DESIGN TOKENS ====== */
 :root {
-  /* Color palette — clean white with warm sand accents */
+  /* Color palette — clean white with warm sand bands, bold violet primary, deep sage accent */
   --color-bg: #FFFFFF;
   --color-bg-alt: #F5F0E6;
   --color-surface: #FFFFFF;
   --color-text: #2A2D2E;
   --color-text-soft: #5C5F60;
   --color-text-mute: #8A8D8E;
-  --color-accent: #7B9080;
-  --color-accent-deep: #5C7166;
-  --color-accent-soft: #E4EBE6;
+  --color-accent: #3D2BC9;          /* bold violet — primary action color */
+  --color-accent-deep: #2A1FA0;     /* darker violet for hover states */
+  --color-accent-soft: #E8E4F8;     /* pale violet tint for soft backgrounds */
+  --color-secondary: #5C8470;       /* deeper sage — accent / supporting */
+  --color-secondary-deep: #436B5A;  /* deep sage for hover */
   --color-line: #E0DBD2;
   --color-line-soft: #EDE9E1;
 
@@ -85,10 +83,14 @@ main { display: block; }
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 .display-1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); }
 .display-2 { font-size: clamp(2rem, 4vw, 3.5rem); }
 .display-3 { font-size: clamp(1.625rem, 3vw, 2.5rem); }
+
+/* Apply balance to all heading levels for orphan prevention */
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
 
 .eyebrow {
   font-family: var(--font-body);
@@ -96,14 +98,25 @@ main { display: block; }
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-accent-deep);
+  color: var(--color-secondary);
 }
 
-p { color: var(--color-text-soft); }
+p { color: var(--color-text-soft); text-wrap: pretty; }
 p.lead {
   font-size: var(--fs-md);
   color: var(--color-text);
   line-height: 1.6;
+}
+
+/* Section intros and short descriptive text get balanced wrapping
+   to prevent single-word last lines on tablet and mobile breakpoints */
+.section-head p,
+.page-head p,
+.article-intro p,
+.hero__lead,
+.pillar__desc,
+.related-service p {
+  text-wrap: balance;
 }
 
 a:hover { color: var(--color-accent-deep); }
@@ -181,7 +194,7 @@ section { padding: var(--space-9) 0; }
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 1.5rem;
-  color: #100146;  /* navy, matched to icon */
+  color: var(--color-accent);  /* violet */
   letter-spacing: -0.01em;
   line-height: 1;
 }
@@ -192,7 +205,7 @@ section { padding: var(--space-9) 0; }
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.6875rem;
-  color: var(--color-text-mute);
+  color: var(--color-secondary);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1;
@@ -224,19 +237,31 @@ section { padding: var(--space-9) 0; }
   color: var(--color-text-soft);
   letter-spacing: 0.02em;
   position: relative;
+  padding-bottom: 4px;
   transition: color var(--transition-base);
 }
 .nav a:hover, .nav a.is-active { color: var(--color-text); }
-.nav a.is-active::after {
+.nav a::after {
   content: '';
   position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
   background: var(--color-accent);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
+  opacity: 0;
+}
+.nav a:hover::after {
+  transform: scaleX(1);
+  opacity: 0.5;
+}
+.nav a.is-active::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 /* Mobile menu button */
@@ -406,11 +431,18 @@ section { padding: var(--space-9) 0; }
   border-radius: 4px;
   overflow: hidden;
 }
+.hero__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .hero__visual::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, transparent 50%, rgba(123, 144, 128, 0.15));
+  background: linear-gradient(160deg, transparent 50%, rgba(61, 43, 201, 0.08));
+  pointer-events: none;
 }
 .hero__visual-placeholder {
   position: absolute;
@@ -506,6 +538,12 @@ a.pillar { text-decoration: none; }
   border-radius: 4px;
   overflow: hidden;
 }
+.split__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .split__media-placeholder {
   position: absolute;
   inset: 0;
@@ -565,6 +603,8 @@ a.pillar { text-decoration: none; }
   aspect-ratio: 4 / 5;
   background: var(--color-accent-soft);
   border-radius: 4px;
+  overflow: hidden;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -573,6 +613,14 @@ a.pillar { text-decoration: none; }
   color: var(--color-accent-deep);
   padding: var(--space-5);
   text-align: center;
+}
+.tab-panel__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
 }
 .tab-panel__title {
   font-family: var(--font-display);
@@ -600,7 +648,7 @@ a.pillar { text-decoration: none; }
   top: 0.7em;
   width: 8px;
   height: 1px;
-  background: var(--color-accent);
+  background: var(--color-secondary);
 }
 
 @keyframes fadeIn {
@@ -680,6 +728,8 @@ a.pillar { text-decoration: none; }
   background: var(--color-accent-soft);
   margin-bottom: var(--space-4);
   border-radius: 4px;
+  overflow: hidden;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -688,6 +738,14 @@ a.pillar { text-decoration: none; }
   color: var(--color-accent-deep);
   text-align: center;
   padding: var(--space-4);
+}
+.team-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
 }
 .team-card__name {
   font-family: var(--font-display);
@@ -970,7 +1028,7 @@ a.pillar { text-decoration: none; }
   top: 0.7em;
   width: 12px;
   height: 1px;
-  background: var(--color-accent);
+  background: var(--color-secondary);
 }
 
 /* ====== RELATED SERVICES ====== */
