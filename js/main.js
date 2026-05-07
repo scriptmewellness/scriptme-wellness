@@ -39,6 +39,12 @@
       a.addEventListener('click', closeNav);
     });
 
+    // Close on close button click
+    const closeButton = navDrawer.querySelector('.nav-drawer__close');
+    if (closeButton) {
+      closeButton.addEventListener('click', closeNav);
+    }
+
     // Close on backdrop click
     if (navBackdrop) {
       navBackdrop.addEventListener('click', closeNav);
@@ -115,6 +121,22 @@
     });
   });
 
+  /* ====== TAB PANELS — mobile accordion behavior ====== */
+  // The service tab panels double as accordion items at narrow viewports.
+  // Each panel's mobile trigger button toggles aria-expanded; CSS handles visibility.
+  document.querySelectorAll('.tab-panel__mobile-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      // Close all triggers (only one panel open at a time)
+      document.querySelectorAll('.tab-panel__mobile-trigger').forEach(function (t) {
+        t.setAttribute('aria-expanded', 'false');
+      });
+      if (!isExpanded) {
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   /* ====== REVEAL ON SCROLL ====== */
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length && 'IntersectionObserver' in window) {
@@ -152,4 +174,32 @@
       }
     });
   }
+  /* ====== REVEAL BOOK SECTION ====== */
+  // The Charm calendar section on contact.html is hidden by default.
+  // It reveals when any link pointing to #book-emily is clicked, or
+  // when the page loads with that hash already in the URL.
+  function revealBookSection() {
+    const section = document.getElementById('book-emily');
+    if (!section) return;
+    section.classList.add('is-visible');
+    // Scroll to it after reveal so the user lands at the calendar
+    setTimeout(function () {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
+
+  // Reveal on page load if hash is already #book-emily
+  if (window.location.hash === '#book-emily') {
+    revealBookSection();
+  }
+
+  // Reveal on any same-page link click that targets #book-emily
+  document.querySelectorAll('a[href="#book-emily"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      revealBookSection();
+      history.pushState(null, '', '#book-emily');
+    });
+  });
+
 })();
