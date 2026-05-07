@@ -326,19 +326,19 @@ section { padding: var(--space-9) 0; }
 }
 @media (min-width: 1000px) { .nav-drawer-backdrop { display: none; } }
 
-/* Mobile nav drawer — slides from the LEFT */
+/* Mobile nav drawer — slides from the RIGHT */
 .nav-drawer {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   bottom: 0;
   width: min(320px, 80vw);
   background: var(--color-bg);
   padding: var(--space-9) var(--space-6) var(--space-6);
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: transform 0.32s var(--ease-out);
   z-index: 100;
-  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
