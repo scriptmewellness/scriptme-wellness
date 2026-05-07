@@ -1,3 +1,4 @@
+
 /* ====== DESIGN TOKENS ====== */
 :root {
   /* Color palette — clean white with warm sand bands, bold violet primary, deep sage accent */
@@ -384,7 +385,7 @@ section { padding: var(--space-9) 0; }
   padding: 0;
   margin: 0;
 }
-.nav-drawer a {
+.nav-drawer ul a {
   font-family: var(--font-body);
   font-size: var(--fs-lg);
   font-weight: 600;
@@ -396,7 +397,7 @@ section { padding: var(--space-9) 0; }
   border-bottom: 1px solid var(--color-line-soft);
   transition: color var(--transition-base);
 }
-.nav-drawer a:hover, .nav-drawer a.is-active { color: var(--color-accent); }
+.nav-drawer ul a:hover, .nav-drawer ul a.is-active { color: var(--color-accent); }
 
 /* Action buttons block at bottom of drawer */
 .nav-drawer__actions {
