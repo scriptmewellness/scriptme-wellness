@@ -344,6 +344,35 @@ section { padding: var(--space-9) 0; }
   flex-direction: column;
 }
 .nav-drawer.is-open { transform: translateX(0); }
+
+/* Close X button inside the drawer */
+.nav-drawer__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+.nav-drawer__close span {
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: background var(--transition-base);
+}
+.nav-drawer__close span:nth-child(1) { transform: rotate(45deg); }
+.nav-drawer__close span:nth-child(2) { transform: rotate(-45deg); }
+.nav-drawer__close:hover span { background: var(--color-accent); }
 .nav-drawer ul {
   display: flex;
   flex-direction: column;
@@ -365,6 +394,21 @@ section { padding: var(--space-9) 0; }
   transition: color var(--transition-base);
 }
 .nav-drawer a:hover, .nav-drawer a.is-active { color: var(--color-accent); }
+
+/* Action buttons block at bottom of drawer */
+.nav-drawer__actions {
+  margin-top: auto;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.nav-drawer__actions .btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
 .nav-drawer__brand {
   display: flex;
   align-items: center;
@@ -670,7 +714,6 @@ a.pillar { text-decoration: none; }
 /* ====== TABS ====== */
 .tabs {
   border-top: 1px solid var(--color-line);
-  border-bottom: 1px solid var(--color-line);
 }
 .tabs__nav {
   display: flex;
@@ -703,6 +746,79 @@ a.pillar { text-decoration: none; }
 .tabs__btn.is-active {
   color: var(--color-text);
   border-bottom-color: var(--color-accent);
+}
+
+/* Mobile/tablet trigger button (hidden by default at desktop) */
+.tab-panel__mobile-trigger { display: none; }
+.tab-panel__body { display: contents; }
+
+/* === MOBILE/TABLET: switch from tabs to accordion === */
+@media (max-width: 799px) {
+  /* Hide horizontal tab nav */
+  .tabs__nav { display: none; }
+  .tabs { border: 0; }
+  
+  /* Show all tab panels stacked */
+  .tab-panel,
+  .tab-panel.is-active {
+    display: block;
+    border-bottom: 1px solid var(--color-line);
+    animation: none;
+  }
+  .tab-panel:first-of-type { border-top: 1px solid var(--color-line); }
+  .tab-panel[hidden] { display: block !important; } /* Override hidden attribute */
+  
+  /* Show mobile trigger button */
+  .tab-panel__mobile-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5) 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    font-weight: 500;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+    transition: color var(--transition-base);
+  }
+  .tab-panel__mobile-trigger:hover { color: var(--color-accent-deep); }
+  .tab-panel__mobile-icon {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    transition: transform 0.3s var(--ease-out);
+  }
+  .tab-panel__mobile-trigger[aria-expanded="true"] .tab-panel__mobile-icon {
+    transform: rotate(180deg);
+  }
+  
+  /* Mobile body collapses by default */
+  .tab-panel__body {
+    display: none;
+    padding: 0 0 var(--space-6);
+  }
+  .tab-panel__mobile-trigger[aria-expanded="true"] + .tab-panel__body {
+    display: block;
+    animation: fadeIn 0.3s var(--ease-out);
+  }
+  
+  /* Constrain image height on mobile so it doesn't dominate */
+  .tab-panel__media {
+    aspect-ratio: auto;
+    max-height: 280px;
+    margin-bottom: var(--space-5);
+  }
+  .tab-panel__media img {
+    max-height: 280px;
+  }
+  
+  /* Hide the original h3 title since the trigger button now serves that purpose */
+  .tab-panel__body .tab-panel__title { display: none; }
 }
 
 .tab-panel { display: none; }
@@ -1179,8 +1295,11 @@ a.pillar { text-decoration: none; }
   background: var(--color-secondary);
 }
 
-/* ====== FAQ ====== */
-.faq-list {
+/* Hide the booking calendar section by default; reveal when toggled via JS */
+.book-section { display: none; }
+.book-section.is-visible { display: block; }
+
+/* ====== FAQ ====== */.faq-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-7);
