@@ -45,7 +45,10 @@
 </header>
 
   <div class="nav-drawer" aria-label="Mobile navigation">
-      <a href="index.html" class="nav-drawer__brand" aria-label="Script Me, Functional Medicine">
+      <button class="nav-drawer__close" aria-label="Close menu" type="button">
+        <span></span><span></span>
+      </button>
+            <a href="index.html" class="nav-drawer__brand" aria-label="Script Me, Functional Medicine">
         <img src="images/script-me-icon.png" alt="" />
         <span class="nav-drawer__brand-text">
           <span class="nav-drawer__brand-name">Script Me</span>
@@ -59,6 +62,10 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
+      <div class="nav-drawer__actions">
+        <a href="contact.html#book-emily" class="btn btn--primary">Book a Discovery Call</a>
+        <a href="https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do" target="_blank" rel="noopener" class="btn btn--outline">Patient Portal</a>
+      </div>
     </div>
     <div class="nav-drawer-backdrop" aria-hidden="true"></div>
 
@@ -91,6 +98,13 @@
 
           <!-- Hormone -->
           <div class="tab-panel is-active" data-panel="hormone" role="tabpanel">
+            <button class="tab-panel__mobile-trigger" type="button" aria-expanded="false">
+              <span>Hormone Optimization</span>
+              <svg class="tab-panel__mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="tab-panel__body">
             <div class="tab-panel__media"><img src="images/service-hormone.jpg" alt="Hands reviewing detailed laboratory test results, illustrating evidence-based hormone optimization." /></div>
             <div>
               <h3 class="tab-panel__title">Hormone Optimization</h3>
@@ -105,10 +119,18 @@
                 <li>Bioidentical hormone therapy</li>
               </ul>
             </div>
+            </div>
           </div>
 
           <!-- Thyroid -->
           <div class="tab-panel" data-panel="thyroid" role="tabpanel" hidden>
+            <button class="tab-panel__mobile-trigger" type="button" aria-expanded="false">
+              <span>Thyroid Health</span>
+              <svg class="tab-panel__mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="tab-panel__body">
             <div class="tab-panel__media"><img src="images/service-thyroid.jpg" alt="A careful physical examination using a stethoscope, illustrating thorough thyroid evaluation." loading="lazy" /></div>
             <div>
               <h3 class="tab-panel__title">Thyroid Health</h3>
@@ -123,10 +145,18 @@
                 <li>Stress, gut, and inflammation triggers</li>
               </ul>
             </div>
+            </div>
           </div>
 
           <!-- Gut -->
           <div class="tab-panel" data-panel="gut" role="tabpanel" hidden>
+            <button class="tab-panel__mobile-trigger" type="button" aria-expanded="false">
+              <span>Gut Health</span>
+              <svg class="tab-panel__mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="tab-panel__body">
             <div class="tab-panel__media"><img src="images/service-gut.jpg" alt="A person resting a hand on their abdomen, representing attention to digestive health." loading="lazy" /></div>
             <div>
               <h3 class="tab-panel__title">Gut Health</h3>
@@ -141,10 +171,18 @@
                 <li>Reflux & digestive function</li>
               </ul>
             </div>
+            </div>
           </div>
 
           <!-- Weight -->
           <div class="tab-panel" data-panel="weight" role="tabpanel" hidden>
+            <button class="tab-panel__mobile-trigger" type="button" aria-expanded="false">
+              <span>Weight Management</span>
+              <svg class="tab-panel__mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="tab-panel__body">
             <div class="tab-panel__media"><img src="images/service-weight.jpg" alt="A woman walking on a peaceful trail at sunset, representing sustainable metabolic health." loading="lazy" /></div>
             <div>
               <h3 class="tab-panel__title">Weight & Metabolic Health</h3>
@@ -159,10 +197,18 @@
                 <li>Long-term habit change</li>
               </ul>
             </div>
+            </div>
           </div>
 
           <!-- Chronic -->
           <div class="tab-panel" data-panel="chronic" role="tabpanel" hidden>
+            <button class="tab-panel__mobile-trigger" type="button" aria-expanded="false">
+              <span>Chronic Disease Management</span>
+              <svg class="tab-panel__mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="tab-panel__body">
             <div class="tab-panel__media"><img src="images/service-chronic.jpg" alt="A practitioner performing a careful, attentive physical examination of a patient." loading="lazy" /></div>
             <div>
               <h3 class="tab-panel__title">Chronic Disease Support</h3>
@@ -177,10 +223,18 @@
                 <li>Inflammation-driven conditions</li>
               </ul>
             </div>
+            </div>
           </div>
 
           <!-- Sleep -->
           <div class="tab-panel" data-panel="sleep" role="tabpanel" hidden>
+            <button class="tab-panel__mobile-trigger" type="button" aria-expanded="false">
+              <span>Sleep & Recovery</span>
+              <svg class="tab-panel__mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="tab-panel__body">
             <div class="tab-panel__media"><img src="images/service-sleep.jpg" alt="A person sleeping peacefully in soft morning light." loading="lazy" /></div>
             <div>
               <h3 class="tab-panel__title">Sleep Optimization</h3>
@@ -195,10 +249,18 @@
                 <li>Stress and anxiety drivers</li>
               </ul>
             </div>
+            </div>
           </div>
 
           <!-- Fitness -->
           <div class="tab-panel" data-panel="fitness" role="tabpanel" hidden>
+            <button class="tab-panel__mobile-trigger" type="button" aria-expanded="false">
+              <span>Fitness Optimization</span>
+              <svg class="tab-panel__mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="tab-panel__body">
             <div class="tab-panel__media"><img src="images/service-fitness.jpg" alt="A person holding light dumbbells, representing accessible strength training." loading="lazy" /></div>
             <div>
               <h3 class="tab-panel__title">Fitness Programming</h3>
@@ -213,10 +275,18 @@
                 <li>Integrating movement into life</li>
               </ul>
             </div>
+            </div>
           </div>
 
           <!-- Supplements -->
           <div class="tab-panel" data-panel="supplements" role="tabpanel" hidden>
+            <button class="tab-panel__mobile-trigger" type="button" aria-expanded="false">
+              <span>Supplements Done Right</span>
+              <svg class="tab-panel__mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="tab-panel__body">
             <div class="tab-panel__media"><img src="images/service-supplements.jpg" alt="A practitioner pouring supplements into a hand, representing targeted, lab-guided supplementation." loading="lazy" /></div>
             <div>
               <h3 class="tab-panel__title">Supplements & Peptides</h3>
@@ -230,6 +300,7 @@
                 <li>Lab-guided protocols</li>
                 <li>Regular review & adjustment</li>
               </ul>
+            </div>
             </div>
           </div>
 
