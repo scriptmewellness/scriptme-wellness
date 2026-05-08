@@ -154,26 +154,6 @@
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  /* ====== CONTACT FORM (Formspree-ready, with mailto fallback) ====== */
-  const contactForm = document.querySelector('[data-contact-form]');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      // If the form has an action attribute (Formspree), let it submit normally.
-      // If not, fall back to mailto.
-      if (!contactForm.getAttribute('action')) {
-        e.preventDefault();
-        const data = new FormData(contactForm);
-        const subject = encodeURIComponent('Website inquiry from ' + (data.get('name') || ''));
-        const body = encodeURIComponent(
-          'Name: ' + (data.get('name') || '') + '\n' +
-          'Email: ' + (data.get('email') || '') + '\n' +
-          'Phone: ' + (data.get('phone') || '') + '\n\n' +
-          (data.get('message') || '')
-        );
-        window.location.href = 'mailto:admin@scriptmewellness.com?subject=' + subject + '&body=' + body;
-      }
-    });
-  }
   /* ====== REVEAL BOOK SECTION ====== */
   // The Charm calendar section on contact.html is hidden by default.
   // It reveals when any link pointing to #book-emily is clicked, or
