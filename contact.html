@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -195,7 +196,11 @@
                 <textarea id="message" name="message" required></textarea>
               </div>
 
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAADLF08HbCj-q9YeV"></div>
+
               <button type="submit" class="btn btn--primary" style="justify-self: start;">Send message</button>
+
+              <p class="form__status" data-form-status role="status" aria-live="polite" style="display: none;"></p>
 
               <p style="font-size: var(--fs-xs); color: var(--color-text-mute); margin-top: 0.5rem;">
                 Please don't include sensitive medical information in this form. For anything clinical, the patient portal is the secure place. We never sell or share your information.
@@ -272,5 +277,67 @@
   </div>
 
   <script src="js/main.js" defer></script>
+  <script>
+  (function () {
+    const form = document.querySelector('[data-contact-form]');
+    if (!form) return;
+    const status = form.querySelector('[data-form-status]');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    function setStatus(msg, type) {
+      if (!status) return;
+      status.textContent = msg;
+      status.style.display = msg ? 'block' : 'none';
+      status.style.color = type === 'error' ? '#a30000' : 'var(--color-accent-deep)';
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const turnstileToken = (window.turnstile && form.querySelector('.cf-turnstile'))
+        ? form.querySelector('input[name="cf-turnstile-response"]')?.value
+        : null;
+
+      if (!turnstileToken) {
+        setStatus('Please complete the verification check.', 'error');
+        return;
+      }
+
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        message: form.message.value.trim(),
+        turnstileToken: turnstileToken,
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      setStatus('', null);
+
+      try {
+        const resp = await fetch('https://scriptme-contact-form.autumn-firefly-bb91.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        const result = await resp.json();
+        if (result.ok) {
+          form.reset();
+          if (window.turnstile) window.turnstile.reset();
+          setStatus('Thank you! Your message has been sent. We will respond within one to two business days.', 'success');
+          submitBtn.textContent = 'Send message';
+          submitBtn.disabled = false;
+        } else {
+          throw new Error(result.error || 'Something went wrong');
+        }
+      } catch (err) {
+        setStatus('Sorry, your message could not be sent. Please try again or contact us through the patient portal.', 'error');
+        submitBtn.textContent = 'Send message';
+        submitBtn.disabled = false;
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
