@@ -91,7 +91,7 @@
         activateTab(btn.dataset.tab, false);
         // Scroll to the top of the tabs container on tab change
         const target = document.querySelector('.section-header') || tabsRoot;
-        if (target) target.scrollIntoView(true);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
@@ -136,9 +136,10 @@
       });
       if (!isExpanded) {
         trigger.setAttribute('aria-expanded', 'true');
-        // Scroll the trigger to the top of the viewport so user starts at the beginning of expanded content
+        // Scroll the panel (parent) into view; CSS scroll-margin keeps it below the sticky header
+        const panel = trigger.closest('.tab-panel');
         setTimeout(function () {
-          trigger.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          (panel || trigger).scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 50);
       }
     });
