@@ -855,10 +855,10 @@ a.pillar { text-decoration: none; }
     animation: fadeIn 0.3s var(--ease-out);
   }
   
-  /* Image becomes a full-width banner on mobile/tablet */
+  /* Image becomes a full-width banner on mobile/tablet, with height cap */
   .tab-panel__media {
     aspect-ratio: 16 / 9;
-    max-height: none;
+    max-height: 380px;
     width: 100%;
     margin-bottom: var(--space-5);
   }
@@ -866,7 +866,7 @@ a.pillar { text-decoration: none; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    max-height: none;
+    max-height: 380px;
   }
   
   /* Hide the original h3 title since the trigger now provides it */
@@ -880,15 +880,14 @@ a.pillar { text-decoration: none; }
   }
 }
 
-.tab-panel { display: none; }
-.tab-panel.is-active {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-8);
-  animation: fadeIn 0.4s var(--ease-out);
-}
-@media (min-width: 800px) {
-  .tab-panel.is-active { grid-template-columns: 1fr 1.4fr; gap: var(--space-8); }
+@media (min-width: 1024px) {
+  .tab-panel { display: none; }
+  .tab-panel.is-active {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-8);
+    animation: fadeIn 0.4s var(--ease-out);
+  }
 }
 .tab-panel__media {
   aspect-ratio: 4 / 5;
