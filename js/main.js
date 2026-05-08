@@ -89,6 +89,9 @@
     buttons.forEach(function (btn) {
       btn.addEventListener('click', function () {
         activateTab(btn.dataset.tab, false);
+        // Scroll to the top of the tabs container on tab change
+        const target = document.querySelector('.section-header') || tabsRoot;
+        if (target) target.scrollIntoView(true);
       });
     });
 
@@ -133,6 +136,10 @@
       });
       if (!isExpanded) {
         trigger.setAttribute('aria-expanded', 'true');
+        // Scroll the trigger to the top of the viewport so user starts at the beginning of expanded content
+        setTimeout(function () {
+          trigger.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
       }
     });
   });
@@ -154,32 +161,15 @@
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  /* ====== REVEAL BOOK SECTION ====== */
-  // The Charm calendar section on contact.html is hidden by default.
-  // It reveals when any link pointing to #book-emily is clicked, or
-  // when the page loads with that hash already in the URL.
-  function revealBookSection() {
-    const section = document.getElementById('book-emily');
-    if (!section) return;
-    section.classList.add('is-visible');
-    // Scroll to it after reveal so the user lands at the calendar
-    setTimeout(function () {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 50);
-  }
-
-  // Reveal on page load if hash is already #book-emily
+  /* ====== SCROLL TO BOOKING SECTION ON HASH ====== */
+  // If page loads with #book-emily in URL, scroll to the calendar smoothly
   if (window.location.hash === '#book-emily') {
-    revealBookSection();
+    const section = document.getElementById('book-emily');
+    if (section) {
+      setTimeout(function () {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
   }
-
-  // Reveal on any same-page link click that targets #book-emily
-  document.querySelectorAll('a[href="#book-emily"]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      revealBookSection();
-      history.pushState(null, '', '#book-emily');
-    });
-  });
 
 })();
