@@ -1,3 +1,4 @@
+
 /* ====== DESIGN TOKENS ====== */
 :root {
   /* Color palette — clean white with warm sand bands, bold violet primary, deep sage accent */
@@ -725,6 +726,10 @@ a.pillar { text-decoration: none; }
 /* ====== TABS ====== */
 .tabs {
   border-top: 1px solid var(--color-line);
+  scroll-margin-top: var(--header-height);
+}
+.tab-panel.is-active {
+  scroll-margin-top: calc(var(--header-height) + 80px);
 }
 .tabs__nav {
   display: flex;
@@ -732,6 +737,10 @@ a.pillar { text-decoration: none; }
   gap: 0;
   border-bottom: 1px solid var(--color-line);
   margin-bottom: var(--space-6);
+  position: sticky;
+  top: var(--header-height);
+  background: var(--color-bg);
+  z-index: 50;
 }
 .tabs__btn {
   padding: var(--space-4) var(--space-5);
@@ -855,17 +864,19 @@ a.pillar { text-decoration: none; }
     animation: fadeIn 0.3s var(--ease-out);
   }
   
-  /* Image becomes a full-width banner on mobile/tablet, with height cap */
+  /* Image displays as a 16:9 banner on mobile/tablet */
   .tab-panel__media {
     aspect-ratio: 16 / 9;
     max-height: 380px;
     width: 100%;
     margin-bottom: var(--space-5);
+    display: block;
   }
   .tab-panel__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     max-height: 380px;
   }
   
